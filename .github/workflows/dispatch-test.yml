@@ -1,18 +1,5 @@
 on:
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch to deploy'
-        required: true
-        type: string
-      service:
-        description: 'Service to Deploy'
-        required: true
-        type: string
-      repo:
-        description: 'the repository'
-        type: string
-        required: true
 
 jobs:
   deploy_branch:
@@ -21,18 +8,9 @@ jobs:
 
       - name: get input
         run: |
-          echo "branch: $BRANCH"
-          echo "service: $SERVICE"
-          echo "repo: $REPO"
-        env:
-          BRANCH: ${{ inputs.branch }}
-          SERVICE: ${{ inputs.service }}
-          REPO: ${{ inputs.repo }}
-
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-         ref: ${{ github.event.ref }}
+          echo "This is a test"
+          echo "This is a test"
+          echo "This is a test"
 
       - name: Set up Docker Buildx
         id: buildx
